@@ -81,8 +81,9 @@ const Home: NextPage = observer(() => {
         <Box>
           {donations
             .sort((a, b) => {
-              return Number(a.mnt) - Number(b.mnt)
+              return new BigNumber(b.amt).minus(a.amt).div('1e18').toNumber()
             })
+            .slice(0, 10)
             .map((donation) => (
               <Box display="flex" gap={8}>
                 <Typography>{donation.addr}</Typography>
