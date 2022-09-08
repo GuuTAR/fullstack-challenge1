@@ -49,7 +49,17 @@ const Home: NextPage = observer(() => {
     }
 
     const result = await makeMulticallNullable(calls)
-    setDonations(Object.values(result))
+    const _donation = {}
+
+    Object.values(result).forEach((a) => {
+      if (_donation[a.addr]) {
+        _donation[a.addr] = { addr: a.addr, amt: Number(_donation[a.addr].amt) + Number(a.amt) }
+      } else {
+        _donation[a.addr] = { addr: a.addr, amt: Number(a.amt) }
+      }
+    })
+
+    setDonations(Object.values(_donation))
   }
 
   useEffect(() => {
