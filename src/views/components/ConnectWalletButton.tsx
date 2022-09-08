@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { accountStore } from 'stores/accountStore'
 import { web3Store } from 'stores/web3Store'
 import { WalletType } from 'types/enums'
+import { shortenAddress } from 'utils/shortenAddress'
 import Web3 from 'web3'
 
 export const ConnectWalletButton = observer(() => {
@@ -40,9 +41,8 @@ export const ConnectWalletButton = observer(() => {
 
   return (
     <Box>
-      {accountStore.address}
       <Button variant="contained" onClick={connectWallet}>
-        Connect Wallet
+        {accountStore.address!! ? shortenAddress(accountStore.address) : 'Connect Wallet'}
       </Button>
     </Box>
   )

@@ -1,3 +1,6 @@
+import BigNumber from 'bignumber.js'
+import { AbiItem } from 'web3-utils'
+
 export interface NativeCurrency {
   name: string
   symbol: string
@@ -17,3 +20,7 @@ export type ChainInfo = {
   // (Mainnet, Kovan, Rinkeby, Goerli, Ropsten)
   nativeCurrency?: NativeCurrency
 }
+
+export type Balances = Record<string, BigNumber>
+
+export type ABI = AbiItem | AbiItem[]

@@ -15,12 +15,16 @@ export const SUPPORTED_CHAINS: Record<number, ChainInfo> = {
     cgkNativeTokenId: 'ethereum',
     nativeCurrency: { name: 'Ethereum', symbol: 'ETH', decimals: 18 },
   },
-  // 4: {
-  //   name: 'Rinkeby Test Network',
-  //   shortName: 'Rinkeby',
-  //   logo: '/static/logos/eth.png',
-  //   explorer: 'https://rinkeby.etherscan.io/',
-  // },
+  4: {
+    name: 'Rinkeby Test Network',
+    shortName: 'Rinkeby',
+    explorerName: 'Etherscan',
+    logo: '/static/logos/eth.png',
+    rpcEndpoint: CHAINSTACK_RPC,
+    tierSupported: false,
+    cgkNativeTokenId: 'ethereum',
+    explorer: 'https://rinkeby.etherscan.io/',
+  },
   // 56: {
   //   name: 'Binance Smart Chain Mainnet',
   //   shortName: 'BSC',
