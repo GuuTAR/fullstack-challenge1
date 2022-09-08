@@ -63,7 +63,9 @@ const Home: NextPage = observer(() => {
   }
 
   useEffect(() => {
-    getAllDonation()
+    setInterval(() => {
+      getAllDonation()
+    }, 1000)
   }, [web3Store.instance])
 
   return (
